@@ -42,12 +42,12 @@ $(document).ready(function(){
   function computerMove() {
     if (!gameIsOver) {
       letter = "O";
-      if (determineTwoInARowWin()) {
+      if (turn == 1) {
+        turn1();
+      } else if (determineTwoInARowWin()) {
         return true;
       } else if (determineTwoInARowBlock()) {
         return true;
-      } else if (turn == 1) {
-        turn1();
       } else if (makeTwoInARow()) {
         return true;
       } else if (!makeAnyMove()) {
@@ -55,6 +55,14 @@ $(document).ready(function(){
         $("#winner_text").css("background-color", "#ccc");
         gameIsOver = true;
       }
+    }
+  }
+  
+  function turn1() {
+    if ($("#sq4").text()) {
+      $("#sq0").text("O");
+    } else {
+      $("#sq4").text("O");
     }
   }
   
@@ -96,14 +104,6 @@ $(document).ready(function(){
       }
     }
     return false;
-  }
-  
-  function turn1() {
-    if ($("#sq4").text()) {
-      $("#sq0").text("O");
-    } else {
-      $("#sq4").text("O");
-    }
   }
   
   function makeTwoInARow() {
