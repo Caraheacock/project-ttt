@@ -1,4 +1,34 @@
-/*
-  Place all the styles related to the matching controller here.
-  They will automatically be included in application.css.
-*/
+#game {
+  width: 360px;
+  margin: 0 auto;
+}
+
+.square {
+  background-color: #eee;
+  width: 100px;
+  height: 100px;
+  float: left;
+  margin: 10px;
+  cursor: pointer;
+  font-size: 5em;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.square p {
+}
+
+#row1, #row2, #row3 {
+}
+
+#winner_text {
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  height: 40px;
+  padding: 10px;
+}
+
+#winner_text p {
+  margin: 0;
+}

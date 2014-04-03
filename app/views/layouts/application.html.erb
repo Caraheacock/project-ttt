@@ -8,7 +8,19 @@
 </head>
 <body>
 
-<%= yield %>
+<div id="container">
+  <h1>Tic Tac Toe</h1>
+  <% if current_user %>
+    <div id="nav">
+      <ul>
+        <li><%= link_to("New Game", :new_game) %></li>
+        <li><%= link_to("Game History", :games) %></li>
+        <li><%= link_to("Log Out", login_path(current_user.id), :method => :delete) %></li>
+      </ul>
+    </div>
+  <% end %>
+  <%= yield %>
+</div>
 
 </body>
 </html>
